@@ -13,14 +13,14 @@ public class AppTest
         assertTrue( true );
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void test_fact_raises_exception_for_negative_number() {
         int number = -5;
-        try {
-            App.fact(number);
-        } catch (IllegalArgumentException e) {
-            assertEquals("Number cannot be negative", e.getMessage());
-        }
+        App.fact(number);
+        // int number2 = 5;
+        // App.fact(number2);
+        // assertEquals("Number cannot be negative", e.getMessage());
+        
     }
 
     @Test
